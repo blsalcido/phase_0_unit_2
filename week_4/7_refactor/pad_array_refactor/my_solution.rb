@@ -59,6 +59,37 @@
 #    What I learned from this solution
 # Copy solution here:
 
+# class Array 
+
+# 	def pad!(min_length, value = nil)
+# 		(min_length - self.length).times { self <<value}
+# 		replace(self)
+# 	end
+
+# 	def pad(min_length, value = nil)
+# 		dup.pad!(min_length, value)
+# 	end
+
+# end
+
+# # 3. Refactored Solution
+
+
+
+# # 4. Reflection 
+
+# # I learned a lot by doing research for this one. I especially liked this little tutorial 
+# #http://dablog.rubypal.com/2007/8/15/bang-methods-or-danger-will-rubyist
+
+# #I was fuzzy on destructive methods so it was really helpful Another hint I got by googling
+# #mostly random stuff was that you could call .pad! in pad. I had spent an hour with the same
+# #code in both methods except pad had dup(self) instead of replace(self) at the end and I had
+# #zero idea why it wasn't working. Then I(just for kicks) called .pad! in .pad and voula! it works.
+# #I wish I knew why it wouldn't work before.
+
+# #lastly as i was trying to figure out why I couldn't get it to work I found this little gem
+# #http://stackoverflow.com/questions/5608918/pad-an-array-to-be-a-certain-size  confirmed that
+# # you don't have to call .pad! in .pad  I just don't know what I did wrong.
 
 
 
