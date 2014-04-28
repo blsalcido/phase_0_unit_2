@@ -1,11 +1,22 @@
 # U2.W4: Review and Refactor: Pad an Array
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself ].
 
 
 
-# 1. First Person's solution I liked
-#    What I learned from this solution
+# 1. First Person's solution I liked(Amol Borcar)
+#    What I learned from this solution: My Comment to Amol's gist
+
+# Your pseudocode doesn't read entirely like plain English but, with that said, it's very easy to see what your strategy is from reading 
+# your pseudocode. I'm using your solution as one of my favorite solutions for this week's refactor challenge. I got a lot out of reading 
+# your reflection. I didn't realize that #push automatically acted destructively and that really cleared up some questions I've had about 
+# code I've written recently using that method. Now, when I refactor my #pad code for a second time, I'll keep that in mind and see if 
+# there's anything I can do differently to make my code more efficient. I appreciate that you told a story in your reflection and encourage 
+#you to keep doing this in the weeks to come. Sometimes, when I write my own reflections I feel a bit verbose if the challenge was 
+# straightforward (even if it took me a lot longer than anticipated to complete). That said, after reading your reflection for this 
+#challenge, I'm motivated to keep being as detailed as possible in my reflections in case it helps someone the way yours helped me. Good work!
+
+
 # Copy solution here:
 
 # amolborcar 
@@ -55,8 +66,14 @@
 
 
 
-# 2. Second Person's solution I liked
-#    What I learned from this solution
+# 2. Second Person's solution I liked (Greg White)
+#    What I learned from this solution: My comment to Greg's gist: 
+# I'm currently working on the refactor challenge for this week and will be refactoring my #pad and #pad! methods. I've been looking for 
+# a way to call #pad! on #pad properly. I tried it a few times but it wasn't working for me, possibly because I was using #append somewhere 
+# in my method which, I think I just read makes the method destructive no matter what. Good work, I like your solution a lot and will use it 
+# as one of the solutions I like in my own refactor solution.
+
+
 # Copy solution here:
 
 # class Array 
@@ -72,7 +89,7 @@
 
 # end
 
-# # 3. Refactored Solution
+
 
 
 
@@ -95,11 +112,54 @@
 
 # 3. My original solution:
 
+class Array
+  
+  def pad!(min_size, value = nil) 
+    x = min_size - self.count
+    x.times do
+      self << value  
+    end  
+    return self # not sure if it is prefered to leave in return in return statements or write them without...I like leaving them in for now.
+  end 
+
+  def pad(min_size, value = nil)  
+    padded_copy = self.clone 
+    x = min_size - self.count 
+    x.times do 
+      padded_copy  << value 
+    end
+    return padded_copy # moved the return statement to a new line 
+  end 
+end  
 
 
 # 4. My refactored solution:
 
+class Array
+  
+  def pad!(min_size, value = nil) 
+    x = min_size - self.count
+    x.times do
+      self << value  
+    end  
+    return self # not sure if it is prefered to leave in return in return statements or write them without...I like leaving them in for now.
+  end 
 
+  def pad(min_length, value = nil)
+    dup.pad!(min_length, value)
+  end
+end 
 
 
 # 5. Reflection
+
+# In combination, these solutions of my peers helped me a lot. They complimented one another as the first taught me (through the reflection)
+# that #push makes methods destructive automatically. That explains why I couldn't find a way to implement #pad! on my second method, #pad. 
+# So, I kept searching through my classmate's solutions and found Gregs. He calls #pad! on #pad exactly as I was thinking might be possible
+# using dup. 
+#
+# This was a good lesson in not giving up on finding ways to improve your code. Just when I thought I had possibly done everything possible
+# to make this better, I found something new :) 
+#
+#
+# 
