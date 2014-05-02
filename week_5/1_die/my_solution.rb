@@ -1,7 +1,7 @@
 # U2.W5: Die Class 1: Numeric
 
 
-# I worked on this challenge [by myself, with: ].
+# I worked on this challenge [by myself].
 
 # 2. Pseudocode
 
@@ -14,18 +14,23 @@
 
 class Die
   def initialize(sides)
-    # code goes here
+      raise ArgumentError if sides <1
+        @sides = sides 
   end
   
   def sides
-    # code goes here
+    @sides
   end
   
   def roll
-    # code goes here
+    rand(1..@sides)
   end
 end
 
+
+die = Die.new(6)
+puts die.sides == 6 # returns true
+puts die.roll == (1..6) # returns true or false
 
 
 # 4. Refactored Solution
