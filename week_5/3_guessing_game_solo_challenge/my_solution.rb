@@ -69,7 +69,7 @@ class GuessingGame            # Creates class GuessingGame
  
   def solved?                 # Defines the method solved? This method will verify whether or not the guess is correct. 
     @guess == @answer         # There is no need for an if/else loop. As I understand it, 
-  end # Ends solved?.         # verifying whether @guess matches @answer will automatically 
+  end # Ends #solved?.        # verifying whether @guess matches @answer will automatically 
 end                           # Ends the Class GuessingGame.
 
 
@@ -77,9 +77,24 @@ end                           # Ends the Class GuessingGame.
 
 # 1. DRIVER TESTS GO BELOW THIS LINE
 
-
-
-
-
+# play_game = GuessingGame.new(5) 
+# play_game.guess(4) == low #=> true
+# play_game.solved? 
 
 # 5. Reflection 
+
+# This was a great reminder that code can be much dryer with the use of instance variables. I don't need the if/else loop in #solved?
+# in order to pass all specs for this callenge.
+
+# As I sit and reflect on this, I find myself wanting to schedule a tutoring session to talk about the use of a : on "symbols" like 
+# :high, :correct, and :low. I've used this before but, I feel I want to have a conversation about this with someone more experienced 
+# than me to get their insights on when this is ideal practice and exactly what that is. I think I understand it but, I would like to  
+# be certain that I'm not over simplifying it so that I don't misuse it in the future. 
+#
+# I wouldn't say I learned anything new here, rather, solidified what we've been learning about this week. This exercise felt natural
+# and was a good "level-up" challenge and felt cohesive when compared to the Die Class challenges from earlier in the week. Overall, 
+# I feel really good about my strategy going into this and am satisfied with my work. 
+#
+#
+#
+# 
