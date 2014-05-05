@@ -27,25 +27,18 @@ boggle_board = [["b", "r", "a", "e"],
 
 
 # Refactored Solution
-
-class BoggleBoard          ### creates class BoggleBoard
- attr_reader :dice_grid    ### makes @dice_grid readable
-  def initialize(dice_grid)### initialize class
-    @dice_grid = dice_grid ### makes dice_grid an instance variable 
-  end                      ### ends #initialize
   
-  def create_word(*coords) ### defines #create_word - it will accept coordinates as arguments         
+  def create_word(*coords)       
     coords.map{|coord| @dice_grid[coord.first][coord.last]}.join("") 
-  end ### ^ #map takes an object and a block - it'll run the block for                                  
-end   ### each element and outputs the values from the block.
-      ### It's taking the first and second coordinates from board and "smooshing" them with #join. 
-      ### If #join wasn't there, we'd get "c o d e".
+  end                                
+end   
+    
 
 
 # DRIVER TESTS GO BELOW THIS LINE
 
-puts boggle_board.create_word([2,1], [3,1], [3,2], [3,3]) #=> "cake"                  ###true
-puts boggle_board.create_word([0,1],[0,2],[1,2],[1,0],[1,1]) #=>"radio"               ###true
+puts create_word([2,1], [3,1], [3,2], [3,3]) #=> "cake"                  ###true
+puts create_word([0,1],[0,2],[1,2],[1,0],[1,1]) #=>"radio"               ###true
 
 # Reflection 
 
@@ -68,27 +61,15 @@ puts boggle_board.create_word([0,1],[0,2],[1,2],[1,0],[1,1]) #=>"radio"         
     
 
 # Refactored Solution
-class BoggleBoard          ### creates class BoggleBoard
- attr_reader :dice_grid    ### makes @dice_grid readable
-  def initialize(dice_grid)### initialize class
-    @dice_grid = dice_grid ### makes dice_grid an instance variable 
-  end                      ### ends #initialize
-  
-  def create_word(*coords) ### defines #create_word - it will accept coordinates as arguments         
-    coords.map{|coord| @dice_grid[coord.first][coord.last]}.join("") 
-  end ### ^ #map takes an object and a block - it'll run the block for                                  
-      ### each element and outputs the values from the block.
-      ### It's taking the first and second coordinates from board and "smooshing" them with #join. 
-      ### If #join wasn't there, we'd get "c o d e".
     
-  def get_row(row) ### defines #get_row
-    @dice_grid[row]### returns corresponding row element of nested array @dice_grid
-  end              ### ends #get_row
-end ### ends the class    
+  def get_row(row) 
+    @dice_grid[row]
+  end              
+end   
 
 
 # DRIVER TESTS GO BELOW THIS LINE
-puts boggle_board.get_row(2) #=> ["e","c","l","r"]                                    ###true
+puts get_row(2) #=> ["e","c","l","r"]                                    ###true
                                   
  
 
@@ -112,32 +93,15 @@ puts boggle_board.get_row(2) #=> ["e","c","l","r"]                              
  #  end 
 
 # Refactored Solution
-
-class BoggleBoard          ### creates class BoggleBoard
- attr_reader :dice_grid    ### makes @dice_grid readable
-  def initialize(dice_grid)### initialize class
-    @dice_grid = dice_grid ### makes dice_grid an instance variable 
-  end                      ### ends #initialize
-  
-  def create_word(*coords) ### defines #create_word - it will accept coordinates as arguments         
-    coords.map{|coord| @dice_grid[coord.first][coord.last]}.join("") 
-  end ### ^ #map takes an object and a block - it'll run the block for                                  
-      ### each element and outputs the values from the block.
-      ### It's taking the first and second coordinates from board and "smooshing" them with #join. 
-      ### If #join wasn't there, we'd get "c o d e".
     
-  def get_row(row) ### defines #get_row
-    @dice_grid[row]### returns corresponding row element of nested array @dice_grid
-  end              ### ends #get_row
-    
-  def get_col(col)           ### defines #get_col
-    @dice_grid.transpose[col]### returns corresponding column element of @dice_grid
-  end                        ### ends #get_col
-end ### ends the class   
+  def get_col(col)           
+    @dice_grid.transpose[col]
+  end                        
+end  
 
 # DRIVER TESTS GO BELOW THIS LINE
 
-puts boggle_board.get_col(1) #=> ["r","o","c","a"]
+puts get_col(1) #=> ["r","o","c","a"]
 
 # Reflection 
 
