@@ -54,8 +54,8 @@ end                           # Ends the Class GuessingGame.
 class GuessingGame            # Creates class GuessingGame
   def initialize(answer)      # Defines method initialize. It accepts one argument (answer, an integer).
     @answer = answer          # Assigns instance variable @answer to the argument (answer, an integer).  
-  end #Ends initialize.       # I used #to_i here(line 17) becuase I got several error messages in socrates when I was  
-                              # first trying to solve the problem and I was trying different things to fix the errors. 
+  end #Ends initialize.       
+  
   def guess(guess)            # Defines method guess 
     @guess = guess            # Assigns instance variable @guess to the argument (guess,an integer).
       if guess > @answer      # Conditional statement: In the event that the argument passed in (guess) is greater than the 
