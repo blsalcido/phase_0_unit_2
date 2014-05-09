@@ -44,8 +44,8 @@ class CreditCard
   
     check_card_num.map!{|x| x.to_i}.inject(:+)
  
-    return true if verifiable_number.reduce(:+) % 10 == 0 
-    return false if verifiable_number.reduce(:+) % 10 !=0
+    return true if check_card_num.reduce(:+) % 10 == 0 
+    return false if check_card_num.reduce(:+) % 10 !=0
   end  
 end
 
