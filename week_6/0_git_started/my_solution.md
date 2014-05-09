@@ -3,7 +3,7 @@ Define the following commands and describe how they work/what they do.
 
 
 #### add
-<!-- Your defnition here -->
+# Adds repo to github
 
 #### branch
 <!-- Your defnition here -->
@@ -39,6 +39,9 @@ Define the following commands and describe how they work/what they do.
 <!-- Your defnition here -->
 
 #### status
+
+#init
+#initializes a git repo in project after cd to existing folder
 
 
 ## Release 4: Git Workflow
